@@ -30,6 +30,7 @@ tools-y += mtools dosfstools libressl
 tools-$(CONFIG_TARGET_orion_generic) += wrt350nv2-builder upslug2
 tools-$(CONFIG_powerpc) += upx
 tools-$(CONFIG_TARGET_x86) += qemu
+tools-$(CONFIG_EFI_IMAGES) += gptfdisk
 tools-$(CONFIG_TARGET_mxs) += elftosb sdimage
 tools-$(CONFIG_TARGET_ar71xx) += lzma-old squashfs
 tools-$(CONFIG_USES_MINOR) += kernel2minor
