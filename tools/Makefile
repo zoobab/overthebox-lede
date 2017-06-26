@@ -73,7 +73,7 @@ $(curdir)/libressl/compile := $(curdir)/pkg-config/install
 $(curdir)/mkimage/compile += $(curdir)/libressl/install
 $(curdir)/firmware-utils/compile += $(curdir)/libressl/install
 $(curdir)/cmake/compile += $(curdir)/libressl/install
-$(curdir)/gptfdisk/compile += $(curdir)/popt/install
+$(curdir)/gptfdisk/compile += $(curdir)/popt/install $(curdir)/e2fsprogs/install
 
 ifneq ($(HOST_OS),Linux)
   tools-y += coreutils
