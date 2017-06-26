@@ -45,7 +45,7 @@ ifneq ($(GRUB_TERMINALS),)
 endif
 
 SIGNATURE:=$(shell perl -e 'printf("%08x", rand(0xFFFFFFFF))')
-EFI_SIGNATURE:=$(strip $(shell uuidgen | sed "s/[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9]$$/0002/" | tr '[a-z]' '[A-Z]'))
+EFI_SIGNATURE:=$(shell perl -e 'printf("%08x-%04x-%04x-%04x-%06x%06x", rand(0xFFFFFFFF), rand(0xFFFF), rand(0xFFFF), rand(0xFFFF), rand(0xFFFFFF), rand(0xFFFFFF))')
 ROOTPART:=$(call qstrip,$(CONFIG_TARGET_ROOTFS_PARTNAME))
 ROOTPART:=$(if $(ROOTPART),$(ROOTPART),PARTUUID=$(SIGNATURE)-02)
 
