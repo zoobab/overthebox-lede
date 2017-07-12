@@ -19,9 +19,9 @@ ADD . /home/$user/src
 WORKDIR /home/$user/src
 RUN ./scripts/feeds update -a
 RUN ./scripts/feeds install -a
-RUN echo CONFIG_TARGET_ar71xx=y > .config
+#RUN echo CONFIG_TARGET_ar71xx=y > .config
 RUN make defconfig
-RUN make prereq
-RUN make tools/install
-RUN make toolchain/install
+#RUN make prereq
+#RUN make tools/install
+#RUN make toolchain/install
 RUN make -j4
